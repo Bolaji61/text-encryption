@@ -1,1 +1,1 @@
-web: gunicorn --chdir encrypt app:app
+web: gunicorn src.app:app
