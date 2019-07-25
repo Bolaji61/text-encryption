@@ -18,4 +18,4 @@ def encrypt():
     return render_template('result.html', token =token)
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug = True, port='5000')
