@@ -4,7 +4,7 @@ from cryptography.fernet import Fernet
 app = Flask(__name__)
 key = Fernet.generate_key()
 
-@app.route('/index')
+@app.route('/')
 def index():
     return render_template('index.html')
 
