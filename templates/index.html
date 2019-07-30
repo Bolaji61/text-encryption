@@ -7,11 +7,28 @@
     <title>Encrypt</title>
 </head>
 <body>
-    <form method="POST", action="/result">
+    <h1>Cipher Text Encryption & Decryption</h1>
+    <h2>Encrypt a text</h2>
+    <form method="POST", action="/encrypt">
         <label>
             Enter the text to be encrypted here
         </label>
-        <input type="text" name="fill">
+        <input type="text" name="encrypt">
+        <input type ="submit" name = 'submit'>
+    </form>
+
+    <h2>Decrypt a text</h2>
+    <form method="POST", action="/decrypt">
+        <label>
+            Enter the encrypted text here
+        </label>
+        <input type="text" name="decrypt">
+        <br>
+        <label>
+            Enter the shift value
+        </label>
+        <input type="number" name="shift_value">
+        <br>
         <input type ="submit" name = 'submit'>
     </form>
 </body>
