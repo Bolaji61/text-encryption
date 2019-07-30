@@ -6,17 +6,12 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-#generates shift number
-def shift_number():
-    for i in range(1):
-        s = random.randint(1, 10)
-    return s
 
 # encrypt a text
 @app.route('/encrypt', methods = ['POST'])
 def encrypt():
     text = request.form.get('encrypt')     #read text from index.html
-    s = shift_number()
+    key = int(request.form.get('key'))
     encrypted_text = ""
 
     # convert the plain text to encrypted form
@@ -29,10 +24,12 @@ def encrypt():
         else:
         # Encrypts upper case characters
             if (char.isupper()):
-                encrypted_text += chr((ord(char) + s - 65) % 26 + 65)   #Generates a new character, also accounts for new ascii codes that are out of alphabet range
+                encrypted_text += chr((ord(char) + key - 65) % 26 + 65)   #Generates a new character, also accounts for new ascii codes that are out of alphabet range
             # Encrypts lower case characters
-            else:
-                encrypted_text += chr((ord(char) + s - 97) % 26 + 97)
+            elif (char.islower()):
+                encrypted_text += chr((ord(char) + key - 97) % 26 + 97)
+            elif (char.isspace() == True):
+                encrypted_text += " "
 
     return render_template("encrypt.html", encrypted_text = encrypted_text)
 

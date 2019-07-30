@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-    <title>Encrypt</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cipher</title>
 </head>
 <body>
     <h1>Cipher Text Encryption & Decryption</h1>
@@ -14,6 +14,12 @@
             Enter the text to be encrypted here
         </label>
         <input type="text" name="encrypt">
+        <br>
+        <label>
+                Enter your shift key
+        </label>
+        <input type="number" name="key" min="1" max="10">
+        <br>
         <input type ="submit" name = 'submit'>
     </form>
 
@@ -25,7 +31,7 @@
         <input type="text" name="decrypt">
         <br>
         <label>
-            Enter the shift value
+            Enter the shift value for the encrypted text
         </label>
         <input type="number" name="shift_value">
         <br>
